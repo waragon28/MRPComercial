@@ -1,0 +1,10 @@
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Vistony.MRP.BLL.dll.config
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Vistony.MRP.BLL.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Vistony.MRP.BLL.pdb
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Forxap.Framework.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Vistony.MRP.DAL.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\bin\Debug\Vistony.MRP.DAL.pdb
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\obj\Debug\Vistony.MRP.BLL.csprojResolveAssemblyReference.cache
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\obj\Debug\Vistony.MRP.BLL.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BLL\obj\Debug\Vistony.MRP.BLL.pdb

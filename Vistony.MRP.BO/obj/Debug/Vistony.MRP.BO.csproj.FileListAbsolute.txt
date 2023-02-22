@@ -1,0 +1,6 @@
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.pdb
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\bin\Debug\Forxap.Framework.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\AddMRP\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.pdb
