@@ -84,12 +84,6 @@
     <Folder Include="Scripts\SQL\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Forxap.Framework.ServiceLayer\Forxap.Framework.ServiceLayer.csproj">
-      <Project>{9b41a12d-b8d0-4607-8c26-3efb4eb9c2af}</Project>
-      <Name>Forxap.Framework.ServiceLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -106,6 +100,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>English_United_States.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Forxap.Framework.ServiceLayer\Forxap.Framework.ServiceLayer.csproj">
+      <Project>{9b41a12d-b8d0-4607-8c26-3efb4eb9c2af}</Project>
+      <Name>Forxap.Framework.ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vistony.MRP.BO\Vistony.MRP.BO.csproj">
+      <Project>{939fe266-735b-4a4c-a5f2-696cd98a1270}</Project>
+      <Name>Vistony.MRP.BO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

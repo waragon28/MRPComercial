@@ -10,6 +10,8 @@ using Forxap.Framework.UI;
 
 using Vistony.MRP.Constans;
 using Vistony.MRP.Win.Asistentes;
+using Vistony.MRP.Win.FormPlanificación;
+using Vistony.MRP.Win.Documento;
 
 namespace Vistony.MRP.Win
 {
@@ -44,7 +46,26 @@ namespace Vistony.MRP.Win
                                 OnShowInicializar();
                             }
                             break;
-
+                        case AddonMenuItem.AddonMainMenuCluster:
+                            {
+                                OnShowCluster();
+                            }
+                            break;
+                        case AddonMenuItem.AddonMainMenuForecast:
+                            {
+                                OnShowForecast();
+                            }
+                            break;
+                        case AddonMenuItem.AddonMainMenuSCM_Clas_Clus:
+                            {
+                                OnShowUDO("OCLA");
+                            }
+                            break;
+                        case AddonMenuItem.AddonMainMenuSCM_Hist_Fore:
+                            {
+                                OnShowHistorialForecast();
+                            }
+                            break;
                             #endregion
 
                     } // fin dl switch
@@ -60,20 +81,69 @@ namespace Vistony.MRP.Win
             }
         }/// fin del  metodo
 
-
-
-
+            
         // integración de SelesForce con SAP
         private void OnShowInicializar()
         {
             try
             {
-                wzdAsistenteMRP form  = new  wzdAsistenteMRP();
-                form.Show();
+               // wzdAsistenteMRP form  = new  wzdAsistenteMRP();
+               // form.Show();
             }
             catch (Exception ex)
             {
                 
+                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
+            }
+        }
+        private void OnShowUDO(string objectType)
+        {
+            try
+            {
+                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, objectType, "");
+            }
+            catch (Exception ex)
+            {
+                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
+            }
+        }
+
+        private void OnShowCluster()
+        {
+            try
+            {
+                FrmCluster form = new FrmCluster();
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+
+                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
+            }
+        }
+        private void OnShowForecast()
+        {
+            try
+            {
+                FrmForecast form = new FrmForecast();
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+
+                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
+            }
+        }
+        private void OnShowHistorialForecast()
+        {
+            try
+            {
+                FrmForecastDocument form = new FrmForecastDocument();
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+
                 Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
             }
         }
@@ -171,243 +241,8 @@ namespace Vistony.MRP.Win
             }
 
         }
-        private void onShowEntrega()
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowWzdProgramacion()
-        {
-            try
-            {
-
-               
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void onShowAsignaDespacho()
-        {
-            try
-            {
-               
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void onShowAsignaDespachoManual()
-        {
-            try
-            {
-              
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void onShowEstadoDespacho()
-        {
-            try
-            {
-             
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowSeguimiento()
-        {
-            try
-            {
-
-               
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowSeguimientoSectorista()
-        {
-            try
-            {
-
-                
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowActualizarUbigeo()
-        {
-            try
-            {
-
-                
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowChoferes()
-        {
-            try
-            {
-                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "CONDUC", string.Empty);
-                
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-
-        private void OnShowAyudantes()
-        {
-            try
-            {
-                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "OAYD", string.Empty);
-
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowActualizarIMEI()
-        {
-            try
-            {
-                // Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "VIS_DIS_ODRT", string.Empty);
-
-                
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowRutaDespacho()
-        {
-            try
-            {
-                // Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "VIS_DIS_ODRT", string.Empty);
-
-                
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowAndenes()
-        {
-            SAPbouiCOM.Matrix oMatrix = null;
-            try
-            {
-
-
-                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "OAND", string.Empty);
-
-
-                activeForm = Application.SBO_Application.Forms.ActiveForm;
-
-                activeForm.Freeze(true);
-                oMatrix = activeForm.GetMatrix("3");
-
-                oMatrix.Columns.Item(3).TitleObject.Caption = "Código x";
-                oMatrix.Columns.Item(4).TitleObject.Caption = "Descripción x";
-                oMatrix.Columns.Item(5).TitleObject.Caption = "Sucursal x";
-
-                //        oColumn = (SAPbouiCOM.Column)oMatrix.Columns.Item("4");
-
-                //  oCombobox = (SAPbouiCOM.ComboBox)oMatrix.Columns.Item(5);
-                //  oCombobox = (SAPbouiCOM.ComboBox)oMatrix.Columns.Item(5).Cells.Item(oMatrix.VisualRowCount).Specific;
-
-                //  _cmbExpDate = (SAPbouiCOM.ComboBox)oIMatrix.Columns.Item("iV_15")
-                //  oColumn.Type = SAPbouiCOM.BoFormItemTypes.it_COMBO_BOX;
-
-                activeForm.Freeze(false);
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-
-        private void OnShowChoferesUbigeo(string menuID)
-        {
-            try
-            {
-          
-
-                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "VIST_UBIGEOCHOFER", string.Empty);
-
-                
-                Application.SBO_Application.Forms.ActiveForm.Title = Application.SBO_Application.Menus.Item(menuID).String;
-                Application.SBO_Application.Forms.ActiveForm.GetMatrix("3").Columns.Item(3).TitleObject.Caption = "Código";
-
-  
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
         
-
-        private void OnShowVehiculos()
-        {
-            try
-            {
-                Application.SBO_Application.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_UserDefinedObject, "VEHICU", string.Empty);
-
-
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-        private void OnShowAsisAnulaDoc()
-        {
-            try
-            {
-                //wzdAnulacion wzd = new wzdAnulacion();
-
-                //wzdConciliar wzd = new wzdConciliar();
-          //      wzd.Show();
-            }
-            catch (Exception ex)
-            {
-                Forxap.Framework.UI.Sb1Messages.ShowError(ex.ToString());
-            }
-        }
-
-
+        
 
 
 

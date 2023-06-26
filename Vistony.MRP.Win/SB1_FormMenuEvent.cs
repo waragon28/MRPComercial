@@ -5,7 +5,8 @@ using SAPbouiCOM.Framework;
 using Forxap.Framework.Constants;
 using Forxap.Framework.UI;
 using Forxap.Banco.UI.Win.Configuracion;
-
+using Vistony.MRP.Constans;
+using Vistony.MRP.Win.Documento;
 
 namespace Vistony.MRP.Win
 {
@@ -28,9 +29,9 @@ namespace Vistony.MRP.Win
                 {
 
 
-                    case "DispatchRoute":
+                    case "FrmForecastDocument":
                         {
-                         //   DispatchRoute .FrmDispatchRoute_FormMenuEvent(ref pVal, out BubbleEvent);
+                            FrmForecastDocument.MenuEvent(ref pVal, out BubbleEvent);
                             //UltimaMilla.FrmDispatchRoute.FrmDispatchRoute_FormMenuEvent(ref pVal, out BubbleEvent);
                   
                             break;

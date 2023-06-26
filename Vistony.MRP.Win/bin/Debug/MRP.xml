@@ -4,36 +4,6 @@
         <name>MRP</name>
     </assembly>
     <members>
-        <member name="M:Vistony.MRP.Win.Asistentes.wzdAsistenteMRP.OnInitializeComponent">
-            <summary>
-            Initialize components. Called by framework after form created.
-            </summary>
-        </member>
-        <member name="M:Vistony.MRP.Win.Asistentes.wzdAsistenteMRP.OnInitializeFormEvents">
-            <summary>
-            Initialize form event. Called by framework before form creation.
-            </summary>
-        </member>
-        <member name="P:Vistony.MRP.Win.Asistentes.BaseWizard.PaneLevel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Vistony.MRP.Win.Asistentes.BaseWizard.PaneMax">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Vistony.MRP.Win.Asistentes.BaseWizard.OnInitializeComponent">
-            <summary>
-            Initialize components. Called by framework after form created.
-            </summary>
-        </member>
-        <member name="M:Vistony.MRP.Win.Asistentes.BaseWizard.OnInitializeFormEvents">
-            <summary>
-            Initialize form event. Called by framework before form creation.
-            </summary>
-        </member>
         <member name="T:Vistony.MRP.Win.Constans.Idioma.EnglishUnited_States">
             <summary>
               Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
@@ -922,11 +892,223 @@
               Busca una cadena traducida similar a Iniciando Carga ....
             </summary>
         </member>
+        <member name="M:Vistony.MRP.Win.Documento.FrmForecastDocument.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Documento.FrmForecastDocument.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmAsignarDatoST.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmAsignarDatoST.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmCluster.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmCluster.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmForecast.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmForecast.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmPeriodo.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.FormPlanificación.FrmPeriodo.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionesConsolidado.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionesConsolidado.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionesConsolidado.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionExponencial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionExponencial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionExponencial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionLineal.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionLineal.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionLineal.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionLogaritmica.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionLogaritmica.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionLogaritmica.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionPolinomica.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionPolinomica.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionPolinomica.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vistony.MRP.Win.Graficos.GraficoFuncionPotencial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionPotencial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vistony.MRP.Win.Graficos.GraficoFuncionPotencial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmCuadroClusterClasificacion.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmCuadroClusterClasificacion.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmFiltroGerenciaForecast.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmFiltroGerenciaForecast.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmFiltroUnidadMedidaForecast.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmFiltroUnidadMedidaForecast.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmSeleccionGrafico.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Mantenimiento.FrmSeleccionGrafico.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
+        </member>
         <member name="M:Vistony.MRP.Win.ApplicationEvent.SB1_Application_AppEvent(SAPbouiCOM.BoAppEventTypes)">
             <summary>
             
             </summary>
             <param name="EventType"></param>
+        </member>
+        <member name="P:Vistony.MRP.Win.Asistentes.BaseWizard.PaneLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Vistony.MRP.Win.Asistentes.BaseWizard.PaneMax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Asistentes.BaseWizard.OnInitializeComponent">
+            <summary>
+            Initialize components. Called by framework after form created.
+            </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Asistentes.BaseWizard.OnInitializeFormEvents">
+            <summary>
+            Initialize form event. Called by framework before form creation.
+            </summary>
         </member>
         <member name="M:Vistony.MRP.Win.Sb1Connection.ConnectToSAP">
             <summary>
@@ -1000,6 +1182,12 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="M:Vistony.MRP.Win.Sb1MetaData.AddUserProcedure">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Vistony.MRP.Win.Sb1MetaData.AddIcon">
             <summary>

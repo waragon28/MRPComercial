@@ -5,3 +5,9 @@ D:\Desarrollo\AddMRP\Vistony.MRP.BO\bin\Debug\SAPBusinessOneSDK.dll
 D:\Desarrollo\AddMRP\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.dll
 D:\Desarrollo\AddMRP\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.pdb
 D:\Desarrollo\AddMRP\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.pdb
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.pdb

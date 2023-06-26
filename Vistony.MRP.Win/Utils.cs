@@ -11,6 +11,7 @@ using Forxap.Framework.Extensions;
 using Forxap.Framework.UI;
 using Vistony.MRP.Constans;
 using System.Data;
+using SAPbouiCOM;
 
 namespace Vistony.MRP.Win
 {
@@ -51,11 +52,13 @@ namespace Vistony.MRP.Win
                 {
                     oComboBox.ValidValues.Add(item.Key, item.Value);
                 }
-                 oComboBox.ValidValues.Remove(0, SAPbouiCOM.BoSearchKey.psk_Index);
+                 //oComboBox.ValidValues.Remove(0, SAPbouiCOM.BoSearchKey.psk_Index);
                  oComboBox.Item.DisplayDesc = true;
             }
 
         }
+
+
         public static void LoadQueryDynamic2(ref SAPbouiCOM.ComboBox oComboBox, string Query)
         {
             Dictionary<string, string> listObject;
@@ -121,7 +124,82 @@ namespace Vistony.MRP.Win
         }
 
 
+        public static string NameUser(int CodUser,ref string NombUser)
+        {
+            SAPbobsCOM.Recordset recordSet = null;
 
+            recordSet = (Recordset)Sb1Globals.oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+
+            if (recordSet == null)
+                throw new NullReferenceException("No se pudo obtener el objeto Recordset");
+
+            try
+            {
+
+                string strSQL = "''";
+
+                strSQL = string.Format("SELECT  \"U_NAME\" FROM OUSR WHERE \"USERID\" LIKE '{0}'  ",CodUser);
+
+                recordSet.DoQuery(strSQL);
+
+
+               return NombUser = recordSet.Fields.Item("U_NAME").Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (recordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(recordSet);
+                    recordSet = null;
+                    GC.Collect();
+                }
+            }
+
+        }
+
+        public static string GetCodOHEM(int CodUser, ref string empID)
+        {
+            SAPbobsCOM.Recordset recordSet = null;
+
+            recordSet = (Recordset)Sb1Globals.oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+
+            if (recordSet == null)
+                throw new NullReferenceException("No se pudo obtener el objeto Recordset");
+
+            try
+            {
+
+                string strSQL = "''";
+
+                strSQL = string.Format("SELECT  \"empID\" FROM OHEM WHERE \"salesPrson\" = '{0}'  ", CodUser);
+
+                recordSet.DoQuery(strSQL);
+                
+                return empID =recordSet.Fields.Item("empID").Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (recordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(recordSet);
+                    recordSet = null;
+                    GC.Collect();
+                }
+            }
+
+        }
 
         public static bool InitConfig()
         {
@@ -242,49 +320,6 @@ namespace Vistony.MRP.Win
 
           
             return code;
-        }
-
-
-        public static DataTable GetCustomers(string ciudad)
-        {
-            SAPbobsCOM.Recordset recordSet = null;
-            string code = string.Empty;
-
-
-            recordSet = (Recordset)Sb1Globals.oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
-
-            if (recordSet == null)
-                throw new NullReferenceException("No se pudo obtener el objeto Recordset");
-
-            try
-            {
-
-                string strSQL = "''";
-
-                strSQL = string.Format("CALL SP_VIS_POLY_TRAECLIENTES {'0'}", ciudad);
-
-                recordSet.DoQuery(strSQL);
-
-                
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            finally
-            {
-                if (recordSet != null)
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(recordSet);
-                    recordSet = null;
-                    GC.Collect();
-                }
-            }
-
-
-            // return code;
-            return null;
         }
 
 
@@ -557,7 +592,7 @@ namespace Vistony.MRP.Win
 
             return rowIndex;
         }
-        public static int CheckRowsEstadoDespacho(SAPbouiCOM.Form oForm, SAPbouiCOM.Grid oGrid,ref int rowsSelected)
+        public static int CheckRowsCheck_NotCheck(SAPbouiCOM.Form oForm, SAPbouiCOM.Grid oGrid)
         {
 
             int rowIndex = 0;
@@ -589,7 +624,7 @@ namespace Vistony.MRP.Win
                         {
                             newValue = "N";
                             // resto un row seleccionado al total de seleccionadps
-                            rowsSelected -= 1;
+                           // rowsSelected -= 1;
                         }
                         else
                         {
@@ -598,7 +633,7 @@ namespace Vistony.MRP.Win
                             newValue = "Y";
                             // obtengo el peso total del peso del  documento y le sumo al total
                             // sumo un row seleccionado al total de seleccionadps
-                            rowsSelected += 1;
+                           /// rowsSelected += 1;
 
 
                         }

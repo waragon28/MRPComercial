@@ -69,9 +69,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Forxap.Framework\bin\Release\x64\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Intersoft.Crosslight, Version=6.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.6.0.5000.975\lib\Intersoft.Crosslight.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Add-Ons-Interfase-resgistro-de-Envasado\Vistony.Envasado.DAL\bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
@@ -86,6 +90,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,9 +100,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Asistentes\wzdAsistenteMRP.b1f.cs">
-      <DependentUpon>wzdAsistenteMRP.b1f</DependentUpon>
-    </Compile>
     <Compile Include="Constans\Idioma\EnglishUnited_States.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,7 +116,70 @@
       <DependentUpon>Spanish.resx</DependentUpon>
     </Compile>
     <Compile Include="Constans\LabelsForms.cs" />
+    <Compile Include="Documento\FrmForecastDocument.b1f.cs">
+      <DependentUpon>FrmForecastDocument.b1f</DependentUpon>
+    </Compile>
     <Compile Include="FormDataEvent.cs" />
+    <Compile Include="FormPlanificación\FrmAsignarDatoST.b1f.cs">
+      <DependentUpon>FrmAsignarDatoST.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanificación\FrmCluster.b1f.cs">
+      <DependentUpon>FrmCluster.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanificación\FrmForecast.b1f.cs">
+      <DependentUpon>FrmForecast.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanificación\FrmPeriodo.b1f.cs">
+      <DependentUpon>FrmPeriodo.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionesConsolidado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionesConsolidado.Designer.cs">
+      <DependentUpon>GraficoFuncionesConsolidado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionExponencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionExponencial.Designer.cs">
+      <DependentUpon>GraficoFuncionExponencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionLineal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionLineal.Designer.cs">
+      <DependentUpon>GraficoFuncionLineal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionLogaritmica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionLogaritmica.Designer.cs">
+      <DependentUpon>GraficoFuncionLogaritmica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionPolinomica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionPolinomica.Designer.cs">
+      <DependentUpon>GraficoFuncionPolinomica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionPotencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graficos\GraficoFuncionPotencial.Designer.cs">
+      <DependentUpon>GraficoFuncionPotencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FrmCuadroClusterClasificacion.b1f.cs">
+      <DependentUpon>FrmCuadroClusterClasificacion.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FrmFiltroGerenciaForecast.b1f.cs">
+      <DependentUpon>FrmFiltroGerenciaForecast.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FrmFiltroUnidadMedidaForecast.b1f.cs">
+      <DependentUpon>FrmFiltroUnidadMedidaForecast.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FrmSeleccionGrafico.b1f.cs">
+      <DependentUpon>FrmSeleccionGrafico.b1f</DependentUpon>
+    </Compile>
     <Compile Include="SB1_ApplicationEvents.cs" />
     <Compile Include="SB1_ApplicationItemEvent.cs" />
     <Compile Include="Asistentes\BaseWizard.b1f.cs">
@@ -149,10 +214,34 @@
     <None Include="Asistentes\BaseWizard.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
-    <None Include="Asistentes\wzdAsistenteMRP.b1f">
+    <None Include="Configuracion\frmBase.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
-    <None Include="Configuracion\frmBase.b1f">
+    <None Include="Documento\FrmForecastDocument.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="FormPlanificación\FrmAsignarDatoST.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="FormPlanificación\FrmCluster.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="FormPlanificación\FrmForecast.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="FormPlanificación\FrmPeriodo.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Mantenimiento\FrmCuadroClusterClasificacion.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Mantenimiento\FrmFiltroGerenciaForecast.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Mantenimiento\FrmFiltroUnidadMedidaForecast.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Mantenimiento\FrmSeleccionGrafico.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
     <None Include="packages.config" />
@@ -198,31 +287,21 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\Images\AddonIcon.png" />
+    <Content Include="bin\Debug\Images\Cluster.png" />
+    <Content Include="bin\Debug\Images\Forecast.png" />
+    <Content Include="bin\Debug\Images\Planificacion.png" />
+    <Content Include="bin\Debug\Images\SCM2.png" />
     <Content Include="bin\Debug\Images\Wizard.JPG" />
-    <Content Include="bin\Debug\Scripts\Hana\Bolivia\SP_VIS_DIS_LISTPREVASIGv2.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Bolivia\SP_VIS_DIS_OBTENERSUCUSU.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Bolivia\SP_VIS_DIS_GETSTATE.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Bolivia\SP_VIS_DIS_CORR_DESPACHO.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Bolivia\SP_VIS_DIS_SEARCHOPERATIONS.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\España\FX_LENGUAGE_SAP - Copia.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\España\FX_LENGUAGE_SAP.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\España\SP_VIS_DIS_SEARCHOPERATIONS.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Peru\SP_VIS_DIS_GETSTATE.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Peru\SP_VIS_DIS_LISTPREVASIGv2.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Peru\SP_VIS_DIS_OBTENERSUCUSU.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Peru\SP_VIS_DIS_CORR_DESPACHO.sql" />
-    <Content Include="bin\Debug\Scripts\Hana\Peru\SP_VIS_DIS_SEARCHOPERATIONS.sql" />
+    <Content Include="bin\Debug\Scripts\Hana\Bolivia\GETSUCURSALES.sql" />
+    <Content Include="bin\Debug\Scripts\Hana\Bolivia\VIS_GET_MRP_CLUSTER_CONSUL.sql" />
+    <Content Include="bin\Imagen\grafico-de-barras.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Forxap.Framework.ServiceLayer\Forxap.Framework.ServiceLayer.csproj">
+    <ProjectReference Include="..\Forxap.Framework.ServiceLayer\Forxap.Framework.ServiceLayer.csproj">
       <Project>{9b41a12d-b8d0-4607-8c26-3efb4eb9c2af}</Project>
       <Name>Forxap.Framework.ServiceLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\Forxap.Framework.Utils\Forxap.Framework.Utils.csproj">
-      <Project>{25250ded-f283-491f-81db-b3bfeb71ff6c}</Project>
-      <Name>Forxap.Framework.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\Forxap.Framework\Forxap.Framework.csproj">
+    <ProjectReference Include="..\Forxap.Framework\Forxap.Framework.csproj">
       <Project>{b4fcb577-e8ea-4c31-bab9-2747d6ed2cf7}</Project>
       <Name>Forxap.Framework</Name>
     </ProjectReference>

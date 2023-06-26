@@ -54,6 +54,7 @@ namespace Vistony.MRP.Win
         /// 
         /// </summary>
         public static int UserSignature = 0;
+        public static string empID = "0";
 
         /// <summary>
         /// 
@@ -63,7 +64,7 @@ namespace Vistony.MRP.Win
 
         public static string Sucursal = string.Empty;
         public static string Idioma = string.Empty;
-
+        public static string NameCompletUser = string.Empty;
     }// fin de la clase
 
 }// fin del namespace

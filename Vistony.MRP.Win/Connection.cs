@@ -22,7 +22,7 @@ namespace Vistony.MRP.Win
    
             bool ret = true;
            
-
+            
             try
             {
                // AddonMessageInfo addonMessageInfo = new AddonMessageInfo();
@@ -39,10 +39,10 @@ namespace Vistony.MRP.Win
                 
                 Sb1Globals.UserSignature = Sb1Globals.oCompany.UserSignature;// obtiene el codigo del usuario logeado
                 Sb1Globals.UserName = Sb1Globals.oCompany.UserName; // Nombre  del usuario logeado ejemplo plazarte
-               // Sb1Globals.Sucursal = Utils.GetSucursal(Sb1Globals.UserName);
+                Sb1Globals.NameCompletUser = Utils.NameUser(Sb1Globals.UserSignature, ref Sb1Globals.Sucursal);
                // Sb1Globals.Departamento = Utils.GetDepartamento(Sb1Globals.UserName);
                 Sb1Globals.CompanyName = Sb1Globals.oCompany.CompanyName; // Nombre de la compañia a la que esta logeado
-                
+                Utils.GetCodOHEM(Sb1Globals.UserSignature, ref Sb1Globals.empID);
                 if (Sb1Globals.Idioma == "")
                 {
                    // Sb1Globals.Idioma = Utils.GetIdiomaSAP(Sb1Globals.UserName);
@@ -73,8 +73,8 @@ namespace Vistony.MRP.Win
 
                 Sb1Messages.ShowSuccess(string.Format(AddonMessageInfo.StartLoading), SAPbouiCOM.BoMessageTime.bmt_Short);
 
-              //  Sb1MetaData.AddIcon();
-
+                Sb1MetaData.AddIcon();
+                Sb1MetaData.AddUserProcedure();
                 #endregion
 
                 Sb1Messages.ShowSuccess(string.Format(AddonMessageInfo.FinishLoading), SAPbouiCOM.BoMessageTime.bmt_Short);

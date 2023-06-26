@@ -2,10 +2,20 @@
   <Menus>
     <action type="add">
 
-
-      <!-- Menu del AddOn Distribución y última milla como modulo-->
-      <Menu Checked="0" Enabled="1" FatherUID="2048"  Image="" Position="5" String="MRP Comercial" Type="1" UniqueID="dis001"></Menu>
+      <Menu Checked="0" Enabled="1" FatherUID="43520"  Image="" Position="8" String="SCM" Type="2" UniqueID="MenuPrincipal"></Menu>
+        <Menu Checked="0" Enabled="1" FatherUID="MenuPrincipal"  Image="" Position="1" String="Planificación" Type="2" UniqueID="menu001"></Menu>
+          <Menu Checked="0" Enabled="1" FatherUID="menu001"  Image="" Position="1" String="Clúster" Type="1" UniqueID="MenuPlan001"></Menu>
+          <Menu Checked="0" Enabled="1" FatherUID="menu001"  Image="" Position="1" String="Forecast" Type="1" UniqueID="MenuPlan002"></Menu>
       
+        <Menu Checked="0" Enabled="1" FatherUID="MenuPrincipal"  Image="" Position="2" String="Forecast" Type="1" UniqueID="menu007"></Menu>
+      
+        <Menu Checked="0" Enabled="1" FatherUID="MenuPrincipal"  Image="" Position="3" String="Distribución y logística" Type="1" UniqueID="menu002"></Menu>
+        <Menu Checked="0" Enabled="1" FatherUID="MenuPrincipal"  Image="" Position="4" String="Compras" Type="1" UniqueID="menu003"></Menu>
+        <Menu Checked="0" Enabled="1" FatherUID="MenuPrincipal"  Image="" Position="5" String="Producción" Type="1" UniqueID="menu004"></Menu>
+
+      <Menu Checked="0" Enabled="1" FatherUID="43525"  Image="" Position="" String="SCM" Type="2" UniqueID="menu005"></Menu>
+        <Menu Checked="0" Enabled="1" FatherUID="menu005"  Image="" Position="" String="Clasificación Clúster" Type="1" UniqueID="menu006"></Menu>
+
     </action>
   </Menus>
 </Application>

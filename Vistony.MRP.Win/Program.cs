@@ -46,8 +46,8 @@ namespace Vistony.MRP.Win
 
                 Application.SBO_Application.FormDataEvent += new SAPbouiCOM._IApplicationEvents_FormDataEventEventHandler(FormEvents.SB1_Application_FormDataEvent);
 
-                /// Eventos que se ejecutan en toda la aplicación 
-        //        Application.SBO_Application.ItemEvent += new SAPbouiCOM._IApplicationEvents_ItemEventEventHandler(ApplicationItemEvents.SB1_Application_ItemEvent);
+                // Eventos que se ejecutan en toda la aplicación 
+                // Application.SBO_Application.ItemEvent += new SAPbouiCOM._IApplicationEvents_ItemEventEventHandler(ApplicationItemEvents.SB1_Application_ItemEvent);
 
                 if (Sb1Connection.ConnectToSAP())
                 {
