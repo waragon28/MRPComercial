@@ -176,9 +176,10 @@ namespace Vistony.MRP.Win.Constans.Idioma {
                 return ResourceManager.GetString("Message123", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///   Busca una cadena traducida similar a Dispatch is already consolidated.
+        ///   Busca una cadena traducida similar a Dis
+        
         /// </summary>
         internal static string Message208 {
             get {

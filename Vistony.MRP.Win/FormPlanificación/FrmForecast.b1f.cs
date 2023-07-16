@@ -1,5 +1,5 @@
-﻿#define AD_BO
-//#define AD_PE
+﻿//#define AD_BO
+#define AD_PE
 //#define AD_PY
 //#define AD_EC
 //#define AD_CL
@@ -115,7 +115,9 @@ namespace Vistony.MRP.Win.FormPlanificación
         {
             oForm = SAPbouiCOM.Framework.Application.SBO_Application.Forms.Item(this.UIAPIRawForm.UniqueID);
             Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetListSucu_Ind);
-            ComboBox0.Select(1, SAPbouiCOM.BoSearchKey.psk_Index);
+            ComboBox0.Select(2, SAPbouiCOM.BoSearchKey.psk_Index);
+           // ComboBox0.Item.Enabled = false;
+                /*
             Utils.LoadQueryDynamic(ref ComboBox1, AddonMessageInfo.QueryGetSucursalesAlmacen);
 #if AD_BO
             ComboBox2.Item.Visible = false;
@@ -127,7 +129,7 @@ namespace Vistony.MRP.Win.FormPlanificación
             ComboBox2.Select(3, SAPbouiCOM.BoSearchKey.psk_Index);
 #endif
             ComboBox1.Select(1, SAPbouiCOM.BoSearchKey.psk_Index);
-
+            */
             oMatrix = oForm.GetMatrix("Item_20");
             oMatrix.AutoResizeColumns();
 
@@ -136,6 +138,12 @@ namespace Vistony.MRP.Win.FormPlanificación
         }
 
         private void ComboBox0_ClickAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)
+        {
+            
+
+        }
+
+        private void ComboBox0_ComboSelectAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)
         {
             ComboBox1.RemoveValidValues();
             if (ComboBox2.ValidValues.Count > 0)
@@ -171,12 +179,6 @@ namespace Vistony.MRP.Win.FormPlanificación
                     }
                     break;
             }
-
-        }
-
-        private void ComboBox0_ComboSelectAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)
-        {
-            
         }
         
         private void Button0_ClickAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)

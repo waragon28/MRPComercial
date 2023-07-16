@@ -10,7 +10,7 @@ namespace Vistony.MRP.BO
     {
         public string U_ItemCode { get; set; }
         public string U_Dscription { get; set; }
-        public double U_Gal { get; set; }
+        public double U_VIS_Gal { get; set; }
         public int U_Func_Lineal { get; set; }
         public int U_Func_Exponencial { get; set; }
         public int U_Func_Logaritmico { get; set; }
@@ -19,6 +19,7 @@ namespace Vistony.MRP.BO
         public string U_Func_Aplicada { get; set; }
         public int U_Pronostico { get; set; }
         public int U_Ult_Mes_Hist { get; set; }
-        public int U_Req { get; set; }
+        public int U_VIS_Req { get; set; }
+        public int U_Stock { get; set; }
     }
 }

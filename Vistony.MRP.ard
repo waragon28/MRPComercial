@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="Vistony_PE" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="SCM" ExtVersion="1.0.5" Contdata="waragon@nogasa.com.pe" Partner="TI Vistony" DBType="HANA" ClientType="A">
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="Vistony_PE" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="SCM" ExtVersion="1.0.8" Contdata="waragon@nogasa.com.pe" Partner="TI Vistony" DBType="HANA" ClientType="A">
   <Validity>
     <SBOCompatibility>
       <Version From="" To="" />

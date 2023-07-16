@@ -39,14 +39,15 @@ namespace Vistony.MRP.Constans
         public const string QueryGetConsultaAncon_B2B = "CALL P_VIST_PLANNING_PLANEAMIENTO_ANCON_B2B()";
         public const string QueryGetConsultasDetalleLPC_B2C = "CALL P_VIST_PLANNING_PLANEAMIENTO_B2C()";
         public const string QueryGetConsultasDetalleLima_B2C = "CALL \"P_VIST_PLANNING_PLANEAMIENTO_B2C_Detalle_Lima\"()";
-        public const string QueryGetConsultas_Televentas_B2C = "CALL P_VIST_PLANNING_PLANEAMIENTO_B2C_Televentas()";
+        public const string QueryGetConsultas_Televentas_B2C = "CALL \"P_VIST_PLANNING_PLANEAMIENTO_B2C_Televentas\"()";
         public const string QueryGetConsultas_Rofalab = "CALL P_VIST_PLANNING_PLANEAMIENTO_ROFALAB('','')";
-        public const string QueryGetConsultas_Supermercados = "CALL P_VIST_PLANNING_PLANEAMIENTO_SUPERMERCADOS()";
+        public const string QueryGetConsultas_Supermercados = "CALL \"P_VIST_PLANNING_PLANEAMIENTO_SUPERMERCADOS\"()";
         public const string QueryGetConsultas_Categoria_Cluster = "CALL P_VIST_PLANNING_PLANEAMIENTO_CATE_CLUSTER()";
         public const string QueryGetConsultas_List_Gerencia_Forecast = "CALL P_VIST_PLANNING_PLANEAMIENTO_GERENCIA()";
         public const string QueryGetConsultas_List_UnidadMedida_Forecast = "CALL P_VIST_PLANNING_PLANEAMIENTO_UNIDAD_MEDIDA()";
         public const string QueryGetPeriodoForecast = "CALL P_VIST_PLANNING_PERIODO_FORECAST()";
         public const string QueryGetPlanning = "CALL P_VIST_PLANNING_PLANEAMIENTO('{0}','{1}')";
+        public const string QueryGetPlanningxSucursal = "CALL P_VIST_PLANNING_PLANEAMIENTO_X_SUCURSAL('{0}','{1}')";
         public const string QueryGetPlanningClear = "CALL P_VIST_PLANNING_PLANEAMIENTO_CLEAR()";
         public const string QueryGetPlanningSelect = "CALL P_VIST_PLANNING_PLANEAMIENTO_SELECT()";
         public const string QueryGetForecastSucursales = "CALL P_VIST_PLANNING_PLANEAMIENTO_FORECAST_V2('{0}','{1}','{2}','{3}','{4}')";

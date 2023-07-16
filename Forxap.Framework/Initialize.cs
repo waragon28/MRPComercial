@@ -29,8 +29,6 @@ namespace Forxap.Framework
 
                 throw ex;
             }
-            ;
-
             return ret;
         }
 

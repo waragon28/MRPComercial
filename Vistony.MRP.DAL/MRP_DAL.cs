@@ -78,9 +78,10 @@ namespace Vistony.MRP.DAL
                 colItems.Add("Función Polinomica", BoFieldsType.ft_Integer);
                 colItems.Add("Función", BoFieldsType.ft_AlphaNumeric);
                 colItems.Add("Pronostico", BoFieldsType.ft_AlphaNumeric);
+                colItems.Add("Limite Inferior", BoFieldsType.ft_Integer);
                 colItems.Add("Requerimiento", BoFieldsType.ft_AlphaNumeric);
-                colItems.Add("Precio", BoFieldsType.ft_AlphaNumeric);
-                colItems.Add("Almacen", BoFieldsType.ft_AlphaNumeric);
+                colItems.Add("Limite Superior", BoFieldsType.ft_AlphaNumeric);
+                colItems.Add("Stock", BoFieldsType.ft_AlphaNumeric);
             }
                 int a = udt.Rows.Count;
                 if (oMatrix.RowCount > 0)
@@ -121,9 +122,10 @@ namespace Vistony.MRP.DAL
                  udt.SetValue("Función Polinomica", oRow, exp.GetString("Polinomica", oRow));
                  udt.SetValue("Función", oRow, exp.GetString("Funcion", oRow));
                  udt.SetValue("Pronostico", oRow, exp.GetString("Pronostico", oRow));
-                 udt.SetValue("Requerimiento", oRow, exp.GetString("Requerimiento", oRow));
-                 udt.SetValue("Precio", oRow, exp.GetString("Precio", oRow));
-                 udt.SetValue("Almacen", oRow, exp.GetString("Almacen", oRow));
+                 udt.SetValue("Limite Inferior", oRow, Convert.ToInt32(exp.GetString("Limite Inferior", oRow)));
+                 udt.SetValue("Requerimiento",oRow, Convert.ToInt32(exp.GetString("Pronostico", oRow)));
+                 udt.SetValue("Limite Superior", oRow,exp.GetString("Limite Superior", oRow));
+                 udt.SetValue("Stock", oRow, exp.GetString("Stock", oRow));
 
 
             }
@@ -160,12 +162,14 @@ namespace Vistony.MRP.DAL
                 oMatrix.Columns.Item("Col_29").DataBind.Bind("DT_2", "Función Polinomica");
                 oMatrix.Columns.Item("Col_30").DataBind.Bind("DT_2", "Función");
                 oMatrix.Columns.Item("Col_31").DataBind.Bind("DT_2", "Pronostico");
+                oMatrix.Columns.Item("Col_35").DataBind.Bind("DT_2", "Stock");
+
+            oMatrix.Columns.Item("Col_33").DataBind.Bind("DT_2", "Limite Superior");
                 oMatrix.Columns.Item("Col_32").DataBind.Bind("DT_2", "Requerimiento");
-                oMatrix.Columns.Item("Col_33").DataBind.Bind("DT_2", "Precio");
-                oMatrix.Columns.Item("Col_34").DataBind.Bind("DT_2", "Almacen");
+                oMatrix.Columns.Item("Col_34").DataBind.Bind("DT_2", "Limite Inferior");
 
 
-                oMatrix.Columns.Item("Col_1").LinkedObjectType(oMatrix,"Articulo","4");
+            oMatrix.Columns.Item("Col_1").LinkedObjectType(oMatrix,"Articulo","4");
                 oMatrix.Columns.Item("Col_1").RightJustified = true;
                 oMatrix.Columns.Item("Col_3").RightJustified = true;
                 oMatrix.Columns.Item("Col_5").RightJustified = true;
@@ -193,8 +197,20 @@ namespace Vistony.MRP.DAL
                 oMatrix.Columns.Item("Col_29").RightJustified = true;
                 oMatrix.Columns.Item("Col_31").RightJustified = true;
                 oMatrix.Columns.Item("Col_32").RightJustified = true;
-                oMatrix.Columns.Item("Col_33").Visible = false;
-                oMatrix.Columns.Item("Col_34").Visible = false;
+            oMatrix.Columns.Item("Col_34").RightJustified = true;
+            oMatrix.Columns.Item("Col_33").RightJustified = true;
+            oMatrix.Columns.Item("Col_35").RightJustified = true;
+
+
+
+            oMatrix.Columns.Item("Col_19").Visible = false;
+                oMatrix.Columns.Item("Col_20").Visible = false;
+                oMatrix.Columns.Item("Col_21").Visible = false;
+                oMatrix.Columns.Item("Col_22").Visible = false;
+                oMatrix.Columns.Item("Col_23").Visible = false;
+
+            // oMatrix.Columns.Item("Col_33").Visible = false;
+            // oMatrix.Columns.Item("Col_34").Visible = false;
 
             DateTime fechaActual = DateTime.Today;
             DateTime primerDiaMesActual_1 = new DateTime(fechaActual.Year, fechaActual.Month, 1);
@@ -280,11 +296,11 @@ namespace Vistony.MRP.DAL
             Forecast_Hist_C Obj_Forecast_Hist_C = new Forecast_Hist_C();
                 Obj_Forecast_Hist_C.U_USER_CODE = CodUser;
                 Obj_Forecast_Hist_C.U_NAME = NombreUsuario;
-                Obj_Forecast_Hist_C.U_NDED = PuntoEmision;
+                Obj_Forecast_Hist_C.U_SYP_NDED = PuntoEmision;
                 Obj_Forecast_Hist_C.U_TaxDate = FechaDocumento;
                 Obj_Forecast_Hist_C.U_TipoGerencia = TipoGerencia;
                 Obj_Forecast_Hist_C.Period = Periodo;
-                Obj_Forecast_Hist_C.VIS_SCM_FRC1Collection = GetDetalleForecast(Grid);
+                Obj_Forecast_Hist_C.VIS_FRC1Collection = GetDetalleForecast(Grid);
                 return Obj_Forecast_Hist_C;
            
         }
@@ -301,7 +317,7 @@ namespace Vistony.MRP.DAL
                     Forecast_Hist_D Obj_Forecast_Hist_D = new Forecast_Hist_D();
                     Obj_Forecast_Hist_D.U_ItemCode = Grid.DataTable.GetString("ARTICULO", oRows).ToString();
                     Obj_Forecast_Hist_D.U_Dscription = Grid.DataTable.GetString("DESCRIPCION", oRows).ToString();
-                    Obj_Forecast_Hist_D.U_Gal = Convert.ToInt32(Grid.DataTable.GetString("GAL_SKU", oRows).ToString());
+                    Obj_Forecast_Hist_D.U_VIS_Gal = Convert.ToInt32(Grid.DataTable.GetString("GAL_SKU", oRows).ToString());
                     Obj_Forecast_Hist_D.U_Func_Lineal = Convert.ToInt32(Grid.DataTable.GetString("Funcion Lineal", oRows).ToString());
                     Obj_Forecast_Hist_D.U_Func_Exponencial = Convert.ToInt32(Grid.DataTable.GetString("Exponencial", oRows).ToString());
                     Obj_Forecast_Hist_D.U_Func_Logaritmico = Convert.ToInt32(Grid.DataTable.GetString("Logaritmico", oRows).ToString());
@@ -310,7 +326,7 @@ namespace Vistony.MRP.DAL
                     Obj_Forecast_Hist_D.U_Func_Aplicada = Grid.DataTable.GetString("Funcion", oRows).ToString();
                     Obj_Forecast_Hist_D.U_Pronostico = Convert.ToInt32(Grid.DataTable.GetString("Pronostico", oRows).ToString());
                     Obj_Forecast_Hist_D.U_Ult_Mes_Hist = Convert.ToInt32(Grid.DataTable.GetString("Mes 1", oRows).ToString());
-                    Obj_Forecast_Hist_D.U_Req = Convert.ToInt32(Grid.DataTable.GetString("Requerimiento", oRows).ToString());
+                    Obj_Forecast_Hist_D.U_VIS_Req = Convert.ToInt32(Grid.DataTable.GetString("Requerimiento", oRows).ToString());
                         Obj_ListForecast.Add(Obj_Forecast_Hist_D);
                 }
             }
@@ -328,11 +344,11 @@ namespace Vistony.MRP.DAL
             Forecast_Hist_C Obj_Forecast_Hist_C = new Forecast_Hist_C();
             Obj_Forecast_Hist_C.U_USER_CODE = CodUser;
             Obj_Forecast_Hist_C.U_NAME = NombreUsuario;
-            Obj_Forecast_Hist_C.U_NDED = PuntoEmision;
+            Obj_Forecast_Hist_C.U_SYP_NDED = PuntoEmision;
             Obj_Forecast_Hist_C.U_TaxDate = FechaDocumento;
             Obj_Forecast_Hist_C.U_TipoGerencia = TipoGerencia;
             Obj_Forecast_Hist_C.Period = Periodo;
-            Obj_Forecast_Hist_C.VIS_SCM_FRC1Collection = GetDetalleForecastV2(oMatrix);
+            Obj_Forecast_Hist_C.VIS_FRC1Collection = GetDetalleForecastV2(oMatrix);
             return Obj_Forecast_Hist_C;
         }
         public List<Forecast_Hist_D> GetDetalleForecastV2(Matrix oMatrix)
@@ -347,7 +363,7 @@ namespace Vistony.MRP.DAL
                         Forecast_Hist_D Obj_Forecast_Hist_D = new Forecast_Hist_D();
                         Obj_Forecast_Hist_D.U_ItemCode = oMatrix.GetValueFromEditText("Col_1", oRows+1).ToString();
                         Obj_Forecast_Hist_D.U_Dscription = oMatrix.GetValueFromEditText("Col_2", oRows+1).ToString();
-                        Obj_Forecast_Hist_D.U_Gal = Convert.ToDouble(oMatrix.GetValueFromEditText("Col_3", oRows+1).ToString());
+                        Obj_Forecast_Hist_D.U_VIS_Gal = Convert.ToDouble(oMatrix.GetValueFromEditText("Col_3", oRows+1).ToString());
                         Obj_Forecast_Hist_D.U_Func_Lineal = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_25", oRows + 1).ToString());
                         Obj_Forecast_Hist_D.U_Func_Exponencial = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_26", oRows + 1).ToString());
                         Obj_Forecast_Hist_D.U_Func_Logaritmico = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_27", oRows + 1).ToString());
@@ -356,7 +372,8 @@ namespace Vistony.MRP.DAL
                         Obj_Forecast_Hist_D.U_Func_Aplicada = oMatrix.GetValueFromEditText("Col_30", oRows + 1).ToString();
                         Obj_Forecast_Hist_D.U_Pronostico = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_31", oRows + 1).ToString());
                         Obj_Forecast_Hist_D.U_Ult_Mes_Hist = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_18", oRows + 1).ToString());
-                        Obj_Forecast_Hist_D.U_Req = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_32", oRows + 1).ToString());
+                        Obj_Forecast_Hist_D.U_VIS_Req = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_32", oRows + 1).ToString());
+                        Obj_Forecast_Hist_D.U_Stock = Convert.ToInt32(oMatrix.GetValueFromEditText("Col_35", oRows + 1).ToString());
                         Obj_ListForecast.Add(Obj_Forecast_Hist_D);
                     }
                 }
@@ -408,6 +425,7 @@ namespace Vistony.MRP.DAL
 
                 Forxap.Framework.ServiceLayer.Methods methods = new Forxap.Framework.ServiceLayer.Methods();
                 dynamic response;
+                Forxap.Framework.UI.Sb1Messages.ShowWarning("Procesando...");
                 response = methods.POST("OFRC", ObjForecastJson);
                 dynamic json2 = JsonConvert.DeserializeObject(response.Content.ToString());
                 if (response.StatusCode.ToString() == "Created")
@@ -446,10 +464,10 @@ namespace Vistony.MRP.DAL
                         for (int ListSucursal = 0; ListSucursal < ComboBox0.ValidValues.Count; ListSucursal++)
                         {
                             ComboBox0.Select(ListSucursal, SAPbouiCOM.BoSearchKey.psk_Index);
-                            Sucursal = ComboBox0.Value;
+                            Sucursal = ComboBox0.GetSelectedDescription();
                             if (Sucursal != "1")
                             {
-                              ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.Value, ""));
+                              ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.GetSelectedDescription(),ComboBox0.Value));
                                 Forxap.Framework.UI.Sb1Messages.ShowSuccess("Generando consulta.....");
                             }
                         }
@@ -467,12 +485,13 @@ namespace Vistony.MRP.DAL
                         Grid0.Columns.Item("Costo Total").RightJustified = true;
                         Grid0.Columns.Item("Margen").RightJustified = true;
                         Grid0.Columns.Item("Fila").RightJustified = true;
+
                     }
                     else
                     {
 
-                        ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.Value, ""));
-                        ExecuteQueryDataTable(ref oDT, QueryGetPlanningSelect);
+                      //  ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.Value, ""));
+                        ExecuteQueryDataTable(ref oDT,string.Format("CALL P_VIST_PLANNING_PLANEAMIENTO_X_SUCURSAL('{0}', '{1}')", ComboBox0.GetSelectedDescription(), ComboBox0.Value));
                         if (oDT.Rows.Count>0)
                         {
                             Grid0.Sortable();
@@ -485,9 +504,17 @@ namespace Vistony.MRP.DAL
                             Grid0.Columns.Item("Margen").RightJustified = true;
                             Grid0.Columns.Item("Pareto").RightJustified = true;
                             Grid0.Columns.Item("Fila").RightJustified = true;
+                            Grid0.Columns.Item("Stock").RightJustified = true;
+
                         }
-                       
-                     
+
+                            Grid0.Columns.Item("Pareto").Visible = false;
+                            Grid0.Columns.Item("Total sin Impuesto").Visible = false;
+                            Grid0.Columns.Item("Total sin Impuesto").Visible = false;
+                            Grid0.Columns.Item("Costo Total").Visible = false;
+                            Grid0.Columns.Item("Margen").Visible = false;
+                            Grid0.Columns.Item("Categoria").TitleObject.Caption = "Galones Pareto";
+                        Grid0.AutoResizeColumns();
 
 
                     }
@@ -570,6 +597,10 @@ namespace Vistony.MRP.DAL
                     Grid1.Columns.Item("Articulo").RightJustified = true;
                     Grid1.Columns.Item("Fila").RightJustified = true;
                     Grid1.Columns.Item("Pareto").RightJustified = true;
+
+                    Grid1.Columns.Item("Total sin Impuesto").RightJustified = true;
+
+
                     Forxap.Framework.UI.Sb1Messages.ShowSuccess("Consulta Terminada");
                 }
                 else

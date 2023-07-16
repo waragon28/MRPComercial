@@ -85,11 +85,7 @@
               Busca una cadena traducida similar a To finalize.
             </summary>
         </member>
-        <member name="P:Vistony.MRP.Win.Constans.Idioma.EnglishUnited_States.Message208">
-            <summary>
-              Busca una cadena traducida similar a Dispatch is already consolidated.
-            </summary>
-        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:Vistony.MRP.Win.Constans.Idioma.EnglishUnited_States.Message208" -->
         <member name="P:Vistony.MRP.Win.Constans.Idioma.EnglishUnited_States.Message209">
             <summary>
               Busca una cadena traducida similar a Document : {0} was consolidated successfully.

@@ -1,5 +1,5 @@
-﻿#define AD_BO
-//#define AD_PE
+﻿//#define AD_BO
+#define AD_PE
 //#define AD_PY
 //#define AD_EC
 //#define AD_CL
@@ -73,6 +73,7 @@ namespace Vistony.MRP.Win.FormPlanificación
             this.StaticText3 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_8").Specific));
             this.StaticText4 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_9").Specific));
             this.ComboBox1 = ((SAPbouiCOM.ComboBox)(this.GetItem("Item_10").Specific));
+            this.ComboBox1.ComboSelectAfter += new SAPbouiCOM._IComboBoxEvents_ComboSelectAfterEventHandler(this.ComboBox1_ComboSelectAfter);
             this.ComboBox1.ClickAfter += new SAPbouiCOM._IComboBoxEvents_ClickAfterEventHandler(this.ComboBox1_ClickAfter);
             this.StaticText6 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_12").Specific));
             this.Folder0 = ((SAPbouiCOM.Folder)(this.GetItem("Item_17").Specific));
@@ -100,38 +101,10 @@ namespace Vistony.MRP.Win.FormPlanificación
             StaticText5.SetColor(System.Drawing.Color.Blue);
             oForm.ScreenCenter();            
             Grid0.AutoResizeColumns();
-            ComboBox1.Select(1, SAPbouiCOM.BoSearchKey.psk_Index);
-            Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetSucursales);
         }
         
         private void ComboBox1_ClickAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)
         {
-            ComboBox0.RemoveValidValues();
-#if AD_PE
-            if (ComboBox1.GetValue() == "1")
-            {
-                StaticText0.Caption = "Consulta";
-                Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetConsultas);
-            }
-            else if (ComboBox1.GetValue() == "2")
-            {
-                StaticText0.Caption = "Sucursales";
-                Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetSucursales);
-            }
-            else if (ComboBox1.GetValue() == "3")
-            {
-                StaticText0.Caption = "Induvis";
-                //Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo);
-            }
-#elif AD_BO
-          
-            if (ComboBox1.GetValue() == "1")
-            {
-                StaticText0.Caption = "Punto Emisión";
-                Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetSucursales);
-                ComboBox0.Select(1, BoSearchKey.psk_Index);
-            }
-#endif
         }
 
         private void Button0_ChooseFromListBefore(object sboObject, SAPbouiCOM.SBOItemEventArg pVal,out bool BubbleEvent)
@@ -186,6 +159,7 @@ namespace Vistony.MRP.Win.FormPlanificación
                 }
 
                 objMrp_Bll.GetClusterLima(oForm, Query,Grid0);
+                
             }
             else if (ComboBox1.GetValue()=="2")// SUCURSAL
             {
@@ -255,5 +229,23 @@ namespace Vistony.MRP.Win.FormPlanificación
         {
             oForm.Close();
         }
+
+        private void ComboBox1_ComboSelectAfter(object sboObject, SBOItemEventArg pVal)
+        {
+            ComboBox0.RemoveValidValues();
+
+            if (ComboBox1.GetValue()=="1")
+            {
+                StaticText0.Caption = "Consulta";
+                Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetConsultas);
+            }
+            else if (ComboBox1.GetValue() == "2")
+            {
+                StaticText0.Caption = "Sucursales";
+                Utils.LoadQueryDynamic(ref ComboBox0, AddonMessageInfo.QueryGetSucursalesAlmacen);
+            }
+        }
+
+
     }
 }
