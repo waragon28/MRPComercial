@@ -163,7 +163,25 @@ namespace Vistony.MRP.Win.FormPlanificación
             }
             else if (ComboBox1.GetValue()=="2")// SUCURSAL
             {
-                objMrp_Bll.GetClusterSucursales(oForm, recordSet, Grid0, ComboBox0, string.Empty, AddonMessageInfo.QueryGetPlanning,
+                string SUCURSAL = string.Empty;
+                if (ComboBox0.GetSelectedDescription()== "PTOMALDONADO")
+                {
+                    SUCURSAL = "PUERTO MALDONADO";
+                }
+                else if (ComboBox0.GetSelectedDescription() == "LAMERCED")
+                {
+                    SUCURSAL = "LA MERCED";
+                }
+                else if (ComboBox0.GetSelectedDescription() == "LAMERCED")
+                {
+                    SUCURSAL = "LA MERCED";
+                }
+                else
+                {
+                    SUCURSAL =ComboBox0.GetSelectedDescription();
+
+                }
+                objMrp_Bll.GetClusterSucursales(oForm, recordSet, Grid0, ComboBox0, SUCURSAL, AddonMessageInfo.QueryGetPlanning,
                                AddonMessageInfo.QueryGetPlanningSelect, AddonMessageInfo.QueryGetPlanningClear);
             }
             else if (ComboBox1.GetValue() == "3")// INDUVIS

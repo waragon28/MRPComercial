@@ -11,3 +11,10 @@ D:\Desarrollo\MRPComercial\Vistony.MRP.BO\bin\Debug\SAPBusinessOneSDK.dll
 D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.csprojResolveAssemblyReference.cache
 D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.dll
 D:\Desarrollo\MRPComercial\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.pdb
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\bin\Debug\Vistony.MRP.BO.pdb
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\bin\Debug\Forxap.Framework.dll
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.dll
+D:\Desarrollo\MRPComercial-master\Vistony.MRP.BO\obj\Debug\Vistony.MRP.BO.pdb

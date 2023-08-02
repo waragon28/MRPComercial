@@ -97,6 +97,13 @@ namespace Vistony.MRP.Win.FormPlanificación
             this.Button4 = ((SAPbouiCOM.Button)(this.GetItem("Item_21").Specific));
             this.Button4.ClickBefore += new SAPbouiCOM._IButtonEvents_ClickBeforeEventHandler(this.Button4_ClickBefore);
             this.Button4.ClickAfter += new SAPbouiCOM._IButtonEvents_ClickAfterEventHandler(this.Button4_ClickAfter);
+            this.StaticText10 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_22").Specific));
+            this.StaticText11 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_23").Specific));
+            this.StaticText12 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_24").Specific));
+            this.StaticText13 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_25").Specific));
+            this.StaticText14 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_26").Specific));
+            this.StaticText15 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_27").Specific));
+            this.StaticText16 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_28").Specific));
             this.OnCustomInitialize();
 
         }
@@ -164,8 +171,10 @@ namespace Vistony.MRP.Win.FormPlanificación
                 case "2":
                     {
                         StaticText1.Caption = "Sucursales";
-                        Utils.LoadQueryDynamic(ref ComboBox1, AddonMessageInfo.QueryGetSucursalesAlmacen);
+                        Utils.LoadQueryDynamic(ref ComboBox1,string.Format(AddonMessageInfo.QueryGetSucursalesAlmacenUsuario,Sb1Globals.UserSignature));
                         Utils.LoadQueryDynamic(ref ComboBox2, AddonMessageInfo.QueryTipoGerencia);
+                        ComboBox1.Select(1, BoSearchKey.psk_Index);
+                        ComboBox2.Select(3, BoSearchKey.psk_Index);
                         StaticText2.Item.Visible = true;
                         ComboBox2.Item.Visible = true;
                     }
@@ -503,5 +512,12 @@ namespace Vistony.MRP.Win.FormPlanificación
             }
         }
 
+        private StaticText StaticText10;
+        private StaticText StaticText11;
+        private StaticText StaticText12;
+        private StaticText StaticText13;
+        private StaticText StaticText14;
+        private StaticText StaticText15;
+        private StaticText StaticText16;
     }
 }

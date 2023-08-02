@@ -33,7 +33,8 @@ namespace Vistony.MRP.Constans
         public const string Message018 = "Error al crear los procedimiento almacenado";
         public const string QueryGetListSucu_Ind = "CALL VIS_GET_MRP_CLUSTER_CONSUL()";
         public const string QueryGetSucursales = "CALL GETSUCURSALES()";
-        public const string QueryGetSucursalesAlmacen = "CALL GETSUCURSALESALMACEN()"; 
+        public const string QueryGetSucursalesAlmacen = "CALL GETSUCURSALESALMACEN()";
+        public const string QueryGetSucursalesAlmacenUsuario = "CALL GETSUCURSALESALMACENUSUARIO('{0}')";
         public const string QueryGetConsultas = "CALL ADD_MRP_GETCONSULTAS()";
 
         public const string QueryGetConsultaAncon_B2B = "CALL P_VIST_PLANNING_PLANEAMIENTO_ANCON_B2B()";

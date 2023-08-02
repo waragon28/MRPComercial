@@ -71,3 +71,11 @@ D:\Desarrollo\MRPComercial\Forxap.Framework\obj\Debug\Forxap.Framework.csproj.Ge
 D:\Desarrollo\MRPComercial\Forxap.Framework\obj\Debug\Forxap.Framework.dll
 D:\Desarrollo\MRPComercial\Forxap.Framework\obj\Debug\Forxap.Framework.pdb
 D:\Desarrollo\MRPComercial\Forxap.Framework\obj\Debug\Forxap.Framework.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\bin\Debug\Forxap.Framework.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\bin\Debug\Forxap.Framework.pdb
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\obj\Debug\Forxap.Framework.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\obj\Debug\Forxap.Framework.Messages.resources
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\obj\Debug\Forxap.Framework.csproj.GenerateResource.Cache
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\obj\Debug\Forxap.Framework.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework\obj\Debug\Forxap.Framework.pdb

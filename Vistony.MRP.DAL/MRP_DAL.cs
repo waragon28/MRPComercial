@@ -82,6 +82,7 @@ namespace Vistony.MRP.DAL
                 colItems.Add("Requerimiento", BoFieldsType.ft_AlphaNumeric);
                 colItems.Add("Limite Superior", BoFieldsType.ft_AlphaNumeric);
                 colItems.Add("Stock", BoFieldsType.ft_AlphaNumeric);
+              //  colItems.Add("Comentario", BoFieldsType.ft_AlphaNumeric);
             }
                 int a = udt.Rows.Count;
                 if (oMatrix.RowCount > 0)
@@ -126,7 +127,8 @@ namespace Vistony.MRP.DAL
                  udt.SetValue("Requerimiento",oRow, Convert.ToInt32(exp.GetString("Pronostico", oRow)));
                  udt.SetValue("Limite Superior", oRow,exp.GetString("Limite Superior", oRow));
                  udt.SetValue("Stock", oRow, exp.GetString("Stock", oRow));
-
+               //  udt.SetValue("Comentario", oRow, exp.GetString("Comentario", oRow));
+                
 
             }
 
@@ -162,11 +164,12 @@ namespace Vistony.MRP.DAL
                 oMatrix.Columns.Item("Col_29").DataBind.Bind("DT_2", "Función Polinomica");
                 oMatrix.Columns.Item("Col_30").DataBind.Bind("DT_2", "Función");
                 oMatrix.Columns.Item("Col_31").DataBind.Bind("DT_2", "Pronostico");
-                oMatrix.Columns.Item("Col_35").DataBind.Bind("DT_2", "Stock");
+                //oMatrix.Columns.Item("Col_35").DataBind.Bind("DT_2", "Comentario");
 
             oMatrix.Columns.Item("Col_33").DataBind.Bind("DT_2", "Limite Superior");
                 oMatrix.Columns.Item("Col_32").DataBind.Bind("DT_2", "Requerimiento");
                 oMatrix.Columns.Item("Col_34").DataBind.Bind("DT_2", "Limite Inferior");
+                //oMatrix.Columns.Item("Col_35").DataBind.Bind("DT_2", "Comentario");
 
 
             oMatrix.Columns.Item("Col_1").LinkedObjectType(oMatrix,"Articulo","4");
@@ -199,7 +202,7 @@ namespace Vistony.MRP.DAL
                 oMatrix.Columns.Item("Col_32").RightJustified = true;
             oMatrix.Columns.Item("Col_34").RightJustified = true;
             oMatrix.Columns.Item("Col_33").RightJustified = true;
-            oMatrix.Columns.Item("Col_35").RightJustified = true;
+          //  oMatrix.Columns.Item("Col_35").RightJustified = true;
 
 
 
@@ -208,6 +211,19 @@ namespace Vistony.MRP.DAL
                 oMatrix.Columns.Item("Col_21").Visible = false;
                 oMatrix.Columns.Item("Col_22").Visible = false;
                 oMatrix.Columns.Item("Col_23").Visible = false;
+
+            oMatrix.Columns.Item("Col_25").Visible = false;
+            oMatrix.Columns.Item("Col_26").Visible = false;
+            oMatrix.Columns.Item("Col_27").Visible = false;
+            oMatrix.Columns.Item("Col_28").Visible = false;
+            oMatrix.Columns.Item("Col_29").Visible = false;
+            oMatrix.Columns.Item("Col_30").Visible = false;
+            oMatrix.Columns.Item("Col_35").Visible = false;
+            oMatrix.Columns.Item("Col_33").Visible = false;
+            oMatrix.Columns.Item("Col_34").Visible = false;
+
+            oMatrix.Columns.Item("Col_32").TitleObject.Caption = "Ajuste Pronóstico";
+            
 
             // oMatrix.Columns.Item("Col_33").Visible = false;
             // oMatrix.Columns.Item("Col_34").Visible = false;
@@ -465,6 +481,7 @@ namespace Vistony.MRP.DAL
                         {
                             ComboBox0.Select(ListSucursal, SAPbouiCOM.BoSearchKey.psk_Index);
                             Sucursal = ComboBox0.GetSelectedDescription();
+
                             if (Sucursal != "1")
                             {
                               ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.GetSelectedDescription(),ComboBox0.Value));
@@ -491,7 +508,8 @@ namespace Vistony.MRP.DAL
                     {
 
                       //  ExecuteQueryRecorsed(recordSet, string.Format(QueryGetPlanning, ComboBox0.Value, ""));
-                        ExecuteQueryDataTable(ref oDT,string.Format("CALL P_VIST_PLANNING_PLANEAMIENTO_X_SUCURSAL('{0}', '{1}')", ComboBox0.GetSelectedDescription(), ComboBox0.Value));
+
+                        ExecuteQueryDataTable(ref oDT,string.Format("CALL P_VIST_PLANNING_PLANEAMIENTO_X_SUCURSAL('{0}', '{1}')", Sucursal, ComboBox0.Value));
                         if (oDT.Rows.Count>0)
                         {
                             Grid0.Sortable();

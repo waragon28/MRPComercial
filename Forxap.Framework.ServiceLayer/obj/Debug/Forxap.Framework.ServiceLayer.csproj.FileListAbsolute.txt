@@ -70,3 +70,17 @@ D:\Desarrollo\MRPComercial\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framew
 D:\Desarrollo\MRPComercial\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.csproj.GenerateResource.Cache
 D:\Desarrollo\MRPComercial\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.dll
 D:\Desarrollo\MRPComercial\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.pdb
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\Forxap.Framework.ServiceLayer.dll.config
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\Forxap.Framework.ServiceLayer.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\Forxap.Framework.ServiceLayer.pdb
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\Forxap.Framework.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\RestSharp.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\SAPBusinessOneSDK.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\Forxap.Framework.pdb
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\bin\Debug\RestSharp.xml
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.csprojResolveAssemblyReference.cache
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.SLResources.resources
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.csproj.GenerateResource.Cache
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.dll
+D:\Desarrollo\MRPComercial-master\Forxap.Framework.ServiceLayer\obj\Debug\Forxap.Framework.ServiceLayer.pdb
